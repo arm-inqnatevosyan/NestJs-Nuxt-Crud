@@ -10,6 +10,9 @@ import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { Auth } from './auth.entity';
 import { AuthService } from './auth.service';
+import { AuthDto } from './Dto/auth-dto';
+import { CreateDto } from './Dto/create-dto';
+import { LoginDto } from './Dto/login-dto';
 
 @Controller('auth')
 export class Authcontroller {
@@ -20,7 +23,7 @@ export class Authcontroller {
     return this.service.getUsers(params.id);
   }
   @Post('register')
-  async Register(@Body() user: Auth) {
+  async Register(@Body() user: CreateDto) {
     console.log(user);
     try {
       user.password = await bcrypt.hash(user.password, 12);
@@ -36,7 +39,7 @@ export class Authcontroller {
   }
 
   @Post('login')
-  async Login(@Body() req) {
+  async Login(@Body() req: LoginDto) {
     console.log('donee');
     const user = await this.service.findEmail(req.email);
 
@@ -53,5 +56,9 @@ export class Authcontroller {
       name: user[0].name,
     });
     return { message: 'success', token: jwt };
+  }
+  @Post('root')
+  createUser(@Body() createUserDto: AuthDto) {
+    return this.service.createUser(createUserDto);
   }
 }

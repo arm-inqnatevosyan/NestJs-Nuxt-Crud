@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { User } from './user.entity/user.entity';
+import { UserDto } from './Dto/user-dto';
 
 @Controller('users')
 export class UsersController {
@@ -30,7 +31,7 @@ export class UsersController {
   }
 
   @Post()
-  createUser(@Body() createUserDto: User) {
+  createUser(@Body() createUserDto: UserDto) {
     return this.service.createUser(createUserDto);
   }
   @Put(':id')

@@ -1,6 +1,6 @@
 import { Controller, Post, Body, Get } from '@nestjs/common';
 import { CommentService } from './comments.service';
-import { Comments } from './comments/comments.entity';
+import { CommentDto } from './Dto/comment-dto';
 
 @Controller('comments')
 export class CommentsController {
@@ -11,9 +11,7 @@ export class CommentsController {
   }
 
   @Post()
-  create(@Body() user: Comments) {
+  create(@Body() user: CommentDto) {
     return this.service2.createUser(user);
   }
-
-
 }

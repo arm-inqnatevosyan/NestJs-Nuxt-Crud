@@ -18,7 +18,7 @@ export class UsersService {
     });
   }
 
-  async createUser(userDetails: User) {
+  async createUser(userDetails) {
     const newUser = this.usersRepository.create({
       ...userDetails,
     });

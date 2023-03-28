@@ -10,6 +10,7 @@ import 'dotenv/config';
 import { ConfigModule } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { Auth } from './auth/auth.entity';
+import { AuthDto } from './auth/Dto/auth-dto';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { Auth } from './auth/auth.entity';
       username: process.env.DB_User,
       password: process.env.DB_Password,
       database: process.env.DB_Database,
-      entities: [User, Comments, Auth],
+      entities: [User, Comments, Auth, AuthDto],
       synchronize: true,
     }),
     UsersModule,
