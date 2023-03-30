@@ -11,7 +11,7 @@ export class Authcontroller {
   constructor(private auth: AuthService, private jwtService: JwtService) {}
 
   @Get()
-  gets() {
+  get() {
     return this.auth.getUsers();
   }
   @Post('register')

@@ -16,12 +16,12 @@ export class UsersController {
   constructor(private service: UsersService) {}
 
   @Get()
-  gets(@Param() params) {
+  get(@Param() params) {
     return this.service.getUsers(params.id);
   }
 
   @Get(':id')
-  get(@Param() params, @Body() user: User) {
+  getByUserId(@Param() params, @Body() user: User) {
     return this.service.getUsersId(params.id, user);
   }
 
