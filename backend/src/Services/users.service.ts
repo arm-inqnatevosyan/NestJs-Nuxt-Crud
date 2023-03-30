@@ -9,10 +9,10 @@ export class UsersService {
   constructor(
     @InjectRepository(User) private usersRepository: Repository<User>,
   ) {}
-  async getUsers(user: User): Promise<User[]> {
+  async getUsers(): Promise<User[]> {
     return await this.usersRepository.find({ relations: ['comments'] });
   }
-  async getUsersId(_id: number, user: User): Promise<User[]> {
+  async getUsersId(_id: number): Promise<User[]> {
     return await this.usersRepository.find({
       select: ['email', 'name', 'password'],
       where: [{ id: _id }],
