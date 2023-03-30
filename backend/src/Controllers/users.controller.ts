@@ -16,12 +16,12 @@ export class UsersController {
   constructor(private service: UsersService) {}
 
   @Get()
-  get(@Param() params) {
+  gets(@Param() params) {
     return this.service.getUsers(params.id);
   }
 
   @Get(':id')
-  getByUserId(@Param() params, @Body() user: User) {
+  get(@Param() params, @Body() user: User) {
     return this.service.getUsersId(params.id, user);
   }
 
@@ -40,7 +40,7 @@ export class UsersController {
   }
 
   @Delete(':id')
-  deleteUser(@Param() params) {
-    return this.service.deleteUser(params.id);
+  deleteUser(@Param('id') params) {
+    return this.service.deleteUser(params);
   }
 }
