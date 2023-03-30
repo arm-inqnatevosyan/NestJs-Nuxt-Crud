@@ -3,7 +3,8 @@ module.exports = {
   content: [
     './components/**/*.{js,vue}',
     './pages/**/*.vue',
-    './nuxt.config.{js,ts}'
+    './nuxt.config.{js,ts}',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {
@@ -15,5 +16,5 @@ module.exports = {
       }
     }
   },
-  plugins: [require('tw-elements/dist/plugin')]
+  plugins: [require('flowbite/plugin')]
 }

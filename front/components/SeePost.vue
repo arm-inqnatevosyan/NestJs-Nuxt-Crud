@@ -6,7 +6,7 @@
       </h1>
       <h1>Email :{{ email }}</h1>
       <div class="py-3">
-        <input v-model="content" type="text" class="text-black px-1 outline-none bg-gray-300" placeholder="Add a comment">
+        <input v-model="content" type="text" class="text-black h-[22px] outline-none bg-gray-300" placeholder="Add a comment">
         <button class="h-5 w-16 bg-sky-400 text-white font-bold tracking-widest" @click="addComment(id, content)">
           Post
         </button>
