@@ -1,5 +1,6 @@
 <template>
   <div class="bg-gray-400 h-screen">
+    <NavBars />
     <div class="flex justify-center items-center pt-80">
       <div class="w-full max-w-xs">
         <div class="identity-input mb-4">
@@ -42,6 +43,7 @@
           <button
             class="bg-blue-600 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
+            :disabled="(!email,!password)"
             @click="login(email,password)"
           >
             Log In
@@ -59,9 +61,11 @@
 </template>
 
 <script>
+import NavBars from '../components/NavBars.vue'
 
 export default {
   name: 'LoginVue',
+  components: { NavBars },
   middleware: ['login'],
   data () {
     return {

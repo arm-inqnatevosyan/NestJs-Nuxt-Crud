@@ -45,11 +45,11 @@
 </template>
 
 <script>
-import axios from 'axios'
 import NavBars from '@/components/NavBars'
 export default {
   name: 'NuxtTutorial',
   components: { NavBars },
+  middleware: ['auth'],
   data () {
     return {
       users: [],
@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     async submit (id, email, name, password) {
-      const update = await axios.put(`http://localhost:3005/users/${id}`, { id, email, name, password })
+      const update = await this.$axios.put(`/users/${id}`, { id, email, name, password })
       this.users = update
       if (update.message !== '') {
         this.$router.push('/users')

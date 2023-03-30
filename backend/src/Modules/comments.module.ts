@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { CommentService } from './comments.service';
-import { CommentsController } from './comments.controller';
-import { Comments } from './comments/comments.entity';
+import { CommentService } from '../Services/comments.service';
+import { CommentsController } from '../Controllers/comments.controller';
+import { Comments } from 'src/Entitys/comments.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from 'src/users/user.entity/user.entity';
+import { User } from '../Entitys/user.entity';
 
 @Module({
   providers: [CommentService],

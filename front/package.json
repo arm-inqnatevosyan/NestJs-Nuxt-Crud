@@ -19,6 +19,7 @@
     "js-cookie": "^3.0.1",
     "nuxt": "^2.15.8",
     "params": "^0.1.1",
+    "tw-elements": "^1.0.0-beta1",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"

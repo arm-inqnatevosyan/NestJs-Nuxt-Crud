@@ -1,5 +1,6 @@
 <template>
   <div class="bg-gray-400 h-screen">
+    <NavBars />
     <div class="flex justify-center items-center pt-80">
       <div class="w-full max-w-xs">
         <div class="identity-input mb-4">
@@ -59,18 +60,29 @@
           <button
             class="bg-blue-600 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
+            :disabled="(!email,!name,!password)"
             @click="submit(email,name,password)"
           >
             Sign In
           </button>
+          <NuxtLink to="/">
+            <button
+              class="bg-blue-600 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Log In
+            </button>
+          </NuxtLink>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import NavBars from '../components/NavBars.vue'
+
 export default {
   name: 'IndexPage',
+  components: { NavBars },
   middleware: ['login'],
   data () {
     return {

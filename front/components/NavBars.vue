@@ -120,7 +120,7 @@
 
 <script>
 export default {
-  name: 'NavBarVue',
+  name: 'NavBars',
   data () {
     return {
       isOpen: false

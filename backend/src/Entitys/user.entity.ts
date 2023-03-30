@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Comments } from 'src/comments/comments/comments.entity';
+import { Comments } from './comments.entity';
 
 @Entity()
 export class User {
@@ -15,6 +15,6 @@ export class User {
   @Column()
   password: string;
 
-  @OneToMany((type) => Comments, (comments) => comments.user)
+  @OneToMany(() => Comments, (comments) => comments.user)
   comments: Comments[];
 }

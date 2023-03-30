@@ -1,16 +1,13 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm/dist';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { User } from './users/user.entity/user.entity';
-import { UsersModule } from './users/users.module';
-import { CommentsModule } from './comments/comments.module';
-import { Comments } from './comments/comments/comments.entity';
+import { User } from './Entitys/user.entity';
+import { UsersModule } from './Modules/users.module';
+import { CommentsModule } from './Modules/comments.module';
+import { Comments } from './Entitys/comments.entity';
 import 'dotenv/config';
 import { ConfigModule } from '@nestjs/config';
-import { AuthModule } from './auth/auth.module';
-import { Auth } from './auth/auth.entity';
-import { AuthDto } from './auth/Dto/auth-dto';
+import { AuthModule } from './Modules/auth.module';
+import { Auth } from './Entitys/auth.entity';
 
 @Module({
   imports: [
@@ -25,14 +22,12 @@ import { AuthDto } from './auth/Dto/auth-dto';
       username: process.env.DB_User,
       password: process.env.DB_Password,
       database: process.env.DB_Database,
-      entities: [User, Comments, Auth, AuthDto],
+      entities: [User, Comments, Auth],
       synchronize: true,
     }),
     UsersModule,
     CommentsModule,
     AuthModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

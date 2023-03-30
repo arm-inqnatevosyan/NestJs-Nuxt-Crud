@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { User } from 'src/users/user.entity/user.entity';
-
+import { User } from '../Entitys/user.entity';
 import { Repository } from 'typeorm';
-import { Comments } from './comments/comments.entity';
+import { Comments } from '../Entitys/comments.entity';
 
 @Injectable()
 export class CommentService {

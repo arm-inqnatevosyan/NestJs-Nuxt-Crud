@@ -17,9 +17,10 @@
 
 <script>
 import NavBars from '@/components/NavBars'
-import SeePost from '@/components/Post'
+import SeePost from '@/components/SeePost'
 export default {
   components: { NavBars, SeePost },
+  middleware: ['auth'],
   data () {
     return {
       users: [],

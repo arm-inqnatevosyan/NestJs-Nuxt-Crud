@@ -3,7 +3,9 @@
     <NavBars />
     <div class="text-center">
       <h1>Go Register Page</h1>
-      <button>Clear jwt</button>
+      <button @click="clear">
+        Clear jwt
+      </button>
     </div>
   </div>
 </template>
@@ -11,7 +13,15 @@
 import NavBars from '../components/NavBars.vue'
 
 export default {
-  components: { NavBars }
+  components: { NavBars },
+  methods: {
+    async clear () {
+      const post = await this.$axios.$post('/auth/logout')
+      alert(JSON.stringify(post))
+      if (post.message === 'success') {
+        this.$router.push('/')
+      }
+    }
+  }
 }
-
 </script>
