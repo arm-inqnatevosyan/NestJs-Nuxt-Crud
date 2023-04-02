@@ -40,11 +40,6 @@
               My Jobs
             </NuxtLink>
           </li>
-          <li>
-            <NuxtLink to="/change">
-              Change My Account
-            </NuxtLink>
-          </li>
         </ul>
       </div>
 
@@ -95,11 +90,6 @@
           <li>
             <NuxtLink to="/account" class="my-4 inline-block" @click="isOpen = false">
               My Jobs
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/change" class="my-4 inline-block" @click="isOpen = false">
-              Change My Account
             </NuxtLink>
           </li>
           <li>
