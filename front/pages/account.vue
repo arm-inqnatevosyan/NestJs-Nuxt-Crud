@@ -20,19 +20,19 @@
                   Change Your Profile
                 </button>
                 <nav tabindex="0" class="border bg-white invisible border-gray-800 rounded w-60 absolute left-0 top-full transition-all opacity-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-1">
-                  <ul class="py-1">
+                  <ul class="py-1 mx-auto flex flex-col items-center justify-center">
                     <li>
-                      <input v-model="email" type="email" required placeholder="Emaill" class="text-black pl-1 outline-none">
+                      <input v-model="email" type="email" required placeholder="Emaill" class="text-black pl-1 p-0 outline-none">
                     </li>
                     <li>
-                      <input v-model="name" type="text" required placeholder="Name" class="text-black pl-1 outline-none">
+                      <input v-model="name" type="text" required placeholder="Name" class="text-black pl-1 p-0 outline-none">
                     </li>
                     <li>
-                      <input v-model="password" type="password" required placeholder="Password" class="text-black pl-1 outline-none">
+                      <input v-model="password" type="password" required placeholder="Password" class="text-black pl-1 p-0 outline-none">
                     </li>
                     <li>
                       <button :disabled="(!email,!name,!password)" class="bg-sky-700 p-1 px-3 text-center mx-auto flex justify-center" @click="submit(user.id,email,name,password)">
-                        Changee
+                        Change
                       </button>
                     </li>
                   </ul>

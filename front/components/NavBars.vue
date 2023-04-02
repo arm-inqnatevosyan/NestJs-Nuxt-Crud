@@ -8,7 +8,7 @@
       </div>
 
       <div class="lg:hidden z-10">
-        <button @click="drawer">
+        <button @click="isOpen = !isOpen">
           <svg
             class="h-8 w-8 fill-current text-black"
             fill="none"
@@ -24,7 +24,7 @@
       </div>
 
       <div class="hidden z-10 lg:block">
-        <ul class="flex space-x-5 text-sm  text-white font-sans" style="font-family: 'Montserrat', sans-serif !important;">
+        <ul class="flex space-x-5 text-sm  text-white font-sans">
           <li>
             <NuxtLink to="/home">
               Home
@@ -124,25 +124,6 @@ export default {
   data () {
     return {
       isOpen: false
-    }
-  },
-  watch: {
-    isOpen: {
-      immediate: true,
-      handler (isOpen) {
-        if (process.isOpen) {
-          if (isOpen) {
-            document.body.style.setProperty('overflow', 'hidden')
-          } else {
-            document.body.style.removeProperty('overflow')
-          }
-        }
-      }
-    }
-  },
-  methods: {
-    drawer () {
-      this.isOpen = !this.isOpen
     }
   }
 }
